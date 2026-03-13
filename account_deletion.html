@@ -1,368 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Deletion Request - Flash AI</title>
-    <meta name="description" content="Request account deletion for Flash AI app">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #FFF9F0 0%, #F5EFE0 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 700px;
-            width: 100%;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #C5A572 0%, #A68B5B 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        .icon {
-            font-size: 64px;
-            margin-bottom: 16px;
-        }
-        
-        h1 {
-            font-size: 2em;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .subtitle {
-            font-size: 1em;
-            opacity: 0.95;
-        }
-        
-        .content {
-            padding: 40px 30px;
-        }
-        
-        .info-box {
-            background: #FFF9F0;
-            border-left: 4px solid #C5A572;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .info-box p {
-            margin-bottom: 0;
-            color: #555;
-            font-size: 1.05em;
-        }
-        
-        h2 {
-            color: #C5A572;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .steps {
-            background: #f9f9f9;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-        
-        .step {
-            margin-bottom: 20px;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .step:last-child {
-            margin-bottom: 0;
-        }
-        
-        .step::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 24px;
-            height: 24px;
-            background: #C5A572;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        .step strong {
-            color: #333;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 1.05em;
-        }
-        
-        .step p {
-            color: #666;
-            margin: 0;
-        }
-        
-        .email-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #C5A572 0%, #A68B5B 100%);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(197, 165, 114, 0.3);
-            margin-top: 10px;
-        }
-        
-        .email-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(197, 165, 114, 0.4);
-        }
-        
-        .email-button::before {
-            content: "✉ ";
-            margin-right: 8px;
-        }
-        
-        .timeline {
-            background: #E3F2FD;
-            border-left: 4px solid #2196F3;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-        
-        .timeline h3 {
-            color: #1976D2;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
-        .timeline p {
-            color: #555;
-            margin: 0;
-        }
-        
-        .warning {
-            background: #FFEBEE;
-            border-left: 4px solid #F44336;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        
-        .warning h3 {
-            color: #C62828;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .warning ul {
-            margin-left: 20px;
-            color: #666;
-        }
-        
-        .warning li {
-            margin-bottom: 8px;
-        }
-        
-        footer {
-            background: #f5f5f5;
-            padding: 20px 30px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        footer a {
-            color: #C5A572;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-            }
-            
-            header {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 1.5em;
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            .email-button {
-                display: block;
-                text-align: center;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Deletion Request - Flash AI</title>
+<meta name="description" content="Request account deletion for Flash AI app">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+line-height:1.6;
+color:#333;
+background:linear-gradient(135deg,#FFF9F0 0%,#F5EFE0 100%);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.container{
+max-width:700px;
+width:100%;
+background:white;
+border-radius:16px;
+box-shadow:0 10px 40px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+header{
+background:linear-gradient(135deg,#C5A572 0%,#A68B5B 100%);
+color:white;
+padding:40px 30px;
+text-align:center;
+}
+
+.icon{
+font-size:64px;
+margin-bottom:16px;
+}
+
+h1{
+font-size:2em;
+margin-bottom:8px;
+font-weight:600;
+}
+
+.subtitle{
+font-size:1em;
+opacity:0.95;
+}
+
+.content{
+padding:40px 30px;
+}
+
+.info-box{
+background:#FFF9F0;
+border-left:4px solid #C5A572;
+padding:20px;
+border-radius:8px;
+margin-bottom:30px;
+}
+
+h2{
+color:#C5A572;
+margin-bottom:20px;
+font-size:1.5em;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.steps{
+background:#f9f9f9;
+border-radius:12px;
+padding:25px;
+margin-bottom:30px;
+}
+
+.step{
+margin-bottom:20px;
+padding-left:30px;
+position:relative;
+}
+
+.step:last-child{
+margin-bottom:0;
+}
+
+.step::before{
+content:"✓";
+position:absolute;
+left:0;
+top:0;
+width:24px;
+height:24px;
+background:#C5A572;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+font-weight:bold;
+}
+
+.email-button{
+display:inline-block;
+background:linear-gradient(135deg,#C5A572 0%,#A68B5B 100%);
+color:white;
+padding:16px 32px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+font-size:1.1em;
+box-shadow:0 4px 15px rgba(197,165,114,0.3);
+margin-top:10px;
+}
+
+.timeline{
+background:#E3F2FD;
+border-left:4px solid #2196F3;
+padding:20px;
+border-radius:8px;
+margin-top:30px;
+}
+
+.warning{
+background:#FFEBEE;
+border-left:4px solid #F44336;
+padding:20px;
+border-radius:8px;
+margin-top:20px;
+}
+
+footer{
+background:#f5f5f5;
+padding:20px 30px;
+text-align:center;
+color:#666;
+font-size:0.9em;
+}
+
+footer a{
+color:#C5A572;
+text-decoration:none;
+}
+
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <div class="icon">🗑️</div>
-            <h1>Account Deletion Request</h1>
-            <p class="subtitle">Flash AI</p>
-        </header>
 
-        <div class="content">
-            <div class="info-box">
-                <p>To request deletion of your Flash AI account and all associated data, please follow the instructions below.</p>
-            </div>
+<div class="container">
 
-            <h2>📧 How to Request Account Deletion</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <strong>Step 1: Send an email to:</strong>
-                    <p>abhishek@flashai.co.in</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 2: Email Subject:</strong>
-                    <p>"Account Deletion Request - Flash AI"</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 3: Include in your email:</strong>
-                    <p>• Your registered email address (Google account or phone number used for login)<br>
-                    • Your shop name (if applicable)<br>
-                    • Reason for deletion (optional)</p>
-                </div>
-            </div>
+<header>
+<div class="icon">🗑️</div>
+<h1>Account Deletion Request</h1>
+<p class="subtitle">Flash AI</p>
+</header>
 
-            <a href="mailto:abhishek@flashai.co.in?subject=Account%20Deletion%20Request%20-%20Flash%20AI&body=I%20would%20like%20to%20request%20deletion%20of%20my%20Flash%20AI%20account.%0A%0AMy%20registered%20email%2Fphone%3A%20%5BYour%20email%20or%20phone%20number%20here%5D%0AShop%20name%20(if%20applicable)%3A%20%5BYour%20shop%20name%5D%0A%0AThank%20you." class="email-button">
-                Send Deletion Request
-            </a>
+<div class="content">
 
-            <div class="timeline">
-                <h3>⏱️ Processing Time</h3>
-                <p>We will process your account deletion request and permanently remove all associated data within <strong>7 business days</strong> of receiving your email. You will receive a confirmation email once the deletion is complete.</p>
-            </div>
+<div class="info-box">
+<p>To request deletion of your Flash AI account and all associated data, please follow the instructions below.</p>
+</div>
 
-            <div class="warning">
-                <h3>⚠️ Important Information</h3>
-                <ul>
-                    <li><strong>Permanent Action:</strong> Account deletion is permanent and cannot be undone.</li>
-                    <li><strong>Data Removed:</strong> All your jewelry images, AI-generated photoshoots, product catalogs, and shop information will be permanently deleted.</li>
-                    <li><strong>Website Removed:</strong> Your e-commerce website will be taken offline immediately.</li>
-                    <li><strong>Coins/Credits:</strong> Any remaining coins or credits will be forfeited and cannot be refunded.</li>
-                    <li><strong>No Refunds:</strong> Purchases made prior to deletion are non-refundable.</li>
-                    <li><strong>New Account:</strong> You can create a new account anytime, but previous data cannot be recovered.</li>
-                </ul>
-            </div>
+<h2>📧 How to Request Account Deletion</h2>
 
-            <h2 style="margin-top: 40px;">📋 What Data Will Be Deleted?</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <strong>Personal Information</strong>
-                    <p>Name, email address, phone number, and profile details</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Business Information</strong>
-                    <p>Shop name, address, logo, Instagram handle, and custom domain</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Images & Media</strong>
-                    <p>All uploaded jewelry photos, AI-generated images, product images, and collection banners</p>
-                </div>
-                
-                <div class="step">
-                    <strong>E-commerce Data</strong>
-                    <p>Product catalog, collections, categories, and website customizations</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Transaction History</strong>
-                    <p>Coin purchase history, coin balance, and usage records</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Account Data</strong>
-                    <p>Authentication tokens, app preferences, and settings</p>
-                </div>
-            </div>
+<div class="steps">
 
-            <h2 style="margin-top: 40px;">❓ Frequently Asked Questions</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <strong>Can I recover my account after deletion?</strong>
-                    <p>No, account deletion is permanent. All data is permanently removed from our servers.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>How long does the deletion process take?</strong>
-                    <p>We process deletion requests within 7 business days. You'll receive a confirmation email once complete.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>What happens to my website?</strong>
-                    <p>Your e-commerce website will be taken offline immediately upon account deletion.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Will I get a refund for unused coins?</strong>
-                    <p>No, unused coins are forfeited upon account deletion and are non-refundable.</p>
-                </div>
-            </div>
-        </div>
+<div class="step">
+<strong>Step 1: Send an email to:</strong>
+<p>abhishek@flashai.co.in</p>
+</div>
 
-        <footer>
-            <p>Need help? Contact us at <a href="mailto:abhishek@flashai.co.in">abhishek@flashai.co.in</a></p>
-            <p style="margin-top: 10px;">
-                <a href=" https://abhisoniabhi.github.io/FLASH-AI-PRIVACY-POLICY/">Privacy Policy</a> | 
-                <a href="mailto:abhishek@flashai.co.in">Support</a>
-            </p>
-            <p style="margin-top: 10px; font-size: 0.85em; color: #999;">
-                Flash AI - AI-Powered Jewelry Photoshoot & E-commerce Platform
-            </p>
-        </footer>
-    </div>
+<div class="step">
+<strong>Step 2: Email Subject:</strong>
+<p>"Account Deletion Request - Flash AI"</p>
+</div>
+
+<div class="step">
+<strong>Step 3: Include in your email:</strong>
+<p>
+• Your registered email address (Google account or phone number used for login)<br>
+• Your shop name (if applicable)<br>
+• Reason for deletion (optional)
+</p>
+</div>
+
+</div>
+
+<a href="mailto:abhishek@flashai.co.in?subject=Account%20Deletion%20Request%20-%20Flash%20AI" class="email-button">
+Send Deletion Request
+</a>
+
+<div class="timeline">
+<h3>⏱️ Processing Time</h3>
+<p>We will process your account deletion request and permanently remove all associated data within <strong>7 business days</strong>.</p>
+</div>
+
+<div class="warning">
+
+<h3>⚠️ Important Information</h3>
+
+<ul>
+
+<li><strong>Permanent Action:</strong> Account deletion is permanent and cannot be undone.</li>
+
+<li><strong>Data Removed:</strong> All jewelry images, AI-generated photoshoots, product catalogs, and shop information will be deleted.</li>
+
+<li><strong>Website Removed:</strong> Your e-commerce website will be taken offline.</li>
+
+<li><strong>Coins/Credits:</strong> Any remaining coins or credits will be forfeited.</li>
+
+<li><strong>No Refunds:</strong> Purchases made prior to deletion are non-refundable.</li>
+
+</ul>
+
+</div>
+
+<h2 style="margin-top:40px;">📋 What Data Will Be Deleted?</h2>
+
+<div class="steps">
+
+<div class="step">
+<strong>Personal Information</strong>
+<p>Name, email address, phone number, and profile details</p>
+</div>
+
+<div class="step">
+<strong>Business Information</strong>
+<p>Shop name, address, logo, Instagram handle, and custom domain</p>
+</div>
+
+<div class="step">
+<strong>Images & Media</strong>
+<p>All uploaded jewelry photos and AI-generated images</p>
+</div>
+
+<div class="step">
+<strong>E-commerce Data</strong>
+<p>Product catalog, collections, categories, and website customizations</p>
+</div>
+
+<div class="step">
+<strong>Transaction History</strong>
+<p>Coin purchase history, coin balance, and usage records</p>
+</div>
+
+<div class="step">
+<strong>Account Data</strong>
+<p>Authentication tokens, app preferences, and settings</p>
+</div>
+
+<div class="step">
+<strong>Meta (Facebook & Instagram) Connected Data</strong>
+<p>
+If you connected Flash AI with your Facebook Page or Instagram Business Account for marketing automation,
+we will delete all associated Meta data including:
+</p>
+
+<p>
+• Facebook access tokens<br>
+• Instagram access tokens<br>
+• Connected Facebook Page IDs<br>
+• Connected Instagram Business Account IDs<br>
+• Marketing automation permissions granted through Meta APIs
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:40px;">🔗 Meta (Facebook & Instagram) Data Removal</h2>
+
+<div class="info-box">
+<p>
+If you connected Flash AI with Facebook or Instagram, you can also remove Flash AI's access directly from your Meta account settings.
+</p>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<strong>Remove App Access from Facebook</strong>
+
+<p>
+You may revoke Flash AI access anytime by visiting:
+</p>
+
+<p>
+<a href="https://www.facebook.com/settings?tab=applications" target="_blank">
+https://www.facebook.com/settings?tab=applications
+</a>
+</p>
+
+</div>
+
+<div class="step">
+<strong>What happens after removal?</strong>
+
+<p>
+Once access is revoked or your account is deleted,
+Flash AI will no longer have access to your Facebook Page
+or Instagram Business Account data.
+</p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:40px;">❓ Frequently Asked Questions</h2>
+
+<div class="steps">
+
+<div class="step">
+<strong>Can I recover my account after deletion?</strong>
+<p>No, account deletion is permanent.</p>
+</div>
+
+<div class="step">
+<strong>How long does the deletion process take?</strong>
+<p>We process deletion requests within 7 business days.</p>
+</div>
+
+<div class="step">
+<strong>What happens to my website?</strong>
+<p>Your e-commerce website will be taken offline.</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+Need help? Contact us at
+<a href="mailto:abhishek@flashai.co.in">abhishek@flashai.co.in</a>
+</p>
+
+<p style="margin-top:10px;">
+<a href="https://abhisoniabhi.github.io/FLASH-AI-PRIVACY-POLICY/">Privacy Policy</a>
+</p>
+
+<p style="margin-top:10px;font-size:0.85em;color:#999;">
+Flash AI - AI Powered Jewelry Photoshoot & E-commerce Platform
+</p>
+
+</footer>
+
+</div>
+
 </body>
 </html>
